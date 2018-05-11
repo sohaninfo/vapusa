@@ -9,6 +9,8 @@ import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
 //import DropdownInput from 'react-dropdown-input';
 //import Title, { flushTitle } from 'react-title-component'
+import TodoApp from './ToDo.js'
+import Home from './components/Home.js'
 var Text = require('react-format-text');
 
 
@@ -21,7 +23,6 @@ class App extends Component {
           <h1 className="App-title">VAPUSA</h1>
         </header>
         <p className="App-intro">
-          <h1>Awesome!</h1>
           <Contents />
         </p>
       </div>
@@ -29,68 +30,18 @@ class App extends Component {
   }
 }
 
-  var divStyle = {
-        width: '50%'
-    }
 class Contents extends Component {
   render() {
   
     return (
-      <div style={divStyle}>
-      <VirtualSelect />
-      </div>
+      <Home/>
     );
   }
 }
 
-var options = ['one', 'two', 'three'  ]
-var defaultOption = 'one'
 
-class SelectDropdown extends Component {
-  
-  render() {
-    return (
-      <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
-    );
-  }
-}
 
-var vOptions = [  { value: 'Stanford University', label: 'Stanford' }, { value: 'Cambridge University', label: 'Cambridge' }];
-class VirtualSelect extends Component {
-  constructor (props) {
-    super(props)
 
-    this.state = {}
-  }
-  render() {
-
-    return (
-      <Select
-        name="university"
-        value={this.state.selectValue}
-        options={vOptions}
-        onChange={(selectValue) => this.setState({ selectValue })}
-    />
-        );
-  }
-}
-
-/*class CustomInput extends Component {
-  render() {
-    var searchNames = ['Sydney', 'Melbourne', 'Brisbane', 
-    'Adelaide', 'Perth', 'Hobart'];
-    return (
-      
-<DropdownInput 
-    options={searchNames}
-    defaultValue={this.props.initialValue}
-    menuClassName='dropdown-input'
-    onSelect={this.handleSelectName}
-    placeholder='Search...'
-/>
-    );
-  }
-}*/
 
 
 
